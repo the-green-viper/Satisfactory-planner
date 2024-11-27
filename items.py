@@ -1,9 +1,9 @@
 import recipes
 
 class item:
-    def __init__(self, name: str, recipe: recipes.recipe):
+    def __init__(self, name: str, points: int):
         self.name = name # string
-        self.recipe = recipe # recipe object
+        self.points = points # recipe object
     
     ### getters
     
@@ -11,4 +11,4 @@ class item:
         return self.name
     
     def get_recipe(self):
-        return self.recipe # the object itself is returned, not a copy or name
+        return self.points 
