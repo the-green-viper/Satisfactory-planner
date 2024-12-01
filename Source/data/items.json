@@ -1,10 +1,538 @@
 [
     {
+        "name": "Uranium Waste",
+        "points": "0"
+    },
+    {
+        "name": "Plutonium Waste",
+        "points": "0"
+    },
+    {
+        "name": "Encased Plutonium Cell",
+        "points": "0"
+    },
+    {
+        "name": "Plutonium Pellet",
+        "points": "0"
+    },
+    {
+        "name": "Non-Fissile Uranium",
+        "points": "0"
+    },
+    {
+        "name": "Dissolved Silica",
+        "points": "0"
+    },
+    {
+        "name": "Ficsonium",
+        "points": "0"
+    },
+    {
+        "name": "Alien Protein",
+        "points": "0"
+    },
+    {
+        "name": "Blue Power Slug",
+        "points": "0"
+    },
+    {
+        "name": "Alien DNA Capsule",
+        "points": "0"
+    },
+    {
+        "name": "Mercer Sphere",
+        "points": "0"
+    },
+    {
+        "name": "Purple Power Slug",
+        "points": "0"
+    },
+    {
+        "name": "Yellow Power Slug",
+        "points": "0"
+    },
+    {
+        "name": "Ficsonium Fuel Rod",
+        "points": "0"
+    },
+    {
+        "name": "Blue FICSMAS Ornament",
+        "points": "1"
+    },
+    {
+        "name": "FICSMAS Gift",
+        "points": "1"
+    },
+    {
         "name": "Iron Ore",
         "points": "1"
     },
     {
+        "name": "Iron Ingot",
+        "points": "2"
+    },
+    {
+        "name": "Screw",
+        "points": "2"
+    },
+    {
+        "name": "FICSMAS Tree Branch",
+        "points": "2"
+    },
+    {
+        "name": "Red FICSMAS Ornament",
+        "points": "2"
+    },
+    {
+        "name": "Limestone",
+        "points": "2"
+    },
+    {
+        "name": "Coal",
+        "points": "3"
+    },
+    {
         "name": "Copper Ore",
         "points": "3"
+    },
+    {
+        "name": "Iron Rod",
+        "points": "4"
+    },
+    {
+        "name": "FICSMAS Bow",
+        "points": "4"
+    },
+    {
+        "name": "Actual Snow",
+        "points": "5"
+    },
+    {
+        "name": "Water",
+        "points": "5"
+    },
+    {
+        "name": "Iron Plate",
+        "points": "6"
+    },
+    {
+        "name": "Wire",
+        "points": "6"
+    },
+    {
+        "name": "Copper Ingot",
+        "points": "6"
+    },
+    {
+        "name": "Candy Cane",
+        "points": "6"
+    },
+    {
+        "name": "Caterium Ore",
+        "points": "7"
+    },
+    {
+        "name": "Steel Ingot",
+        "points": "8"
+    },
+    {
+        "name": "Bauxite",
+        "points": "8"
+    },
+    {
+        "name": "Nitrogen Gas",
+        "points": "10"
+    },
+    {
+        "name": "Sulfur",
+        "points": "11"
+    },
+    {
+        "name": "Concrete",
+        "points": "12"
+    },
+    {
+        "name": "Polymer Resin",
+        "points": "12"
+    },
+    {
+        "name": "Black Powder",
+        "points": "14"
+    },
+    {
+        "name": "Raw Quartz",
+        "points": "15"
+    },
+    {
+        "name": "Sulfuric Acid",
+        "points": "16"
+    },
+    {
+        "name": "Quickwire",
+        "points": "17"
+    },
+    {
+        "name": "Iron FICSMAS Ornament",
+        "points": "18"
+    },
+    {
+        "name": "Silica",
+        "points": "20"
+    },
+    {
+        "name": "Petroleum Coke",
+        "points": "20"
+    },
+    {
+        "name": "Alumina Solution",
+        "points": "20"
+    },
+    {
+        "name": "SAM",
+        "points": "20"
+    },
+    {
+        "name": "Cable",
+        "points": "24"
+    },
+    {
+        "name": "Copper Sheet",
+        "points": "24"
+    },
+    {
+        "name": "Steel Pipe",
+        "points": "24"
+    },
+    {
+        "name": "Aluminum Scrap",
+        "points": "27"
+    },
+    {
+        "name": "Compacted Coal",
+        "points": "28"
+    },
+    {
+        "name": "Heavy Oil Residue",
+        "points": "30"
+    },
+    {
+        "name": "Crude Oil",
+        "points": "30"
+    },
+    {
+        "name": "Copper FICSMAS Ornament",
+        "points": "32"
+    },
+    {
+        "name": "Uranium",
+        "points": "35"
+    },
+    {
+        "name": "Caterium Ingot",
+        "points": "42"
+    },
+    {
+        "name": "Quartz Crystal",
+        "points": "50"
+    },
+    {
+        "name": "Smokeless Powder",
+        "points": "58"
+    },
+    {
+        "name": "Empty Canister",
+        "points": "60"
+    },
+    {
+        "name": "Rubber",
+        "points": "60"
+    },
+    {
+        "name": "Steel Beam",
+        "points": "64"
+    },
+    {
+        "name": "Copper Powder",
+        "points": "72"
+    },
+    {
+        "name": "Fuel",
+        "points": "75"
+    },
+    {
+        "name": "Plastic",
+        "points": "75"
+    },
+    {
+        "name": "Nitric Acid",
+        "points": "94"
+    },
+    {
+        "name": "Excited Photonic Matter",
+        "points": "100"
+    },
+    {
+        "name": "FICSMAS Ornament Bundle",
+        "points": "100"
+    },
+    {
+        "name": "Reinforced Iron Plate",
+        "points": "120"
+    },
+    {
+        "name": "Dark Matter Residue",
+        "points": "130"
+    },
+    {
+        "name": "Packaged Water",
+        "points": "130"
+    },
+    {
+        "name": "Aluminum Ingot",
+        "points": "131"
+    },
+    {
+        "name": "Rotor",
+        "points": "140"
+    },
+    {
+        "name": "Encased Uranium Cell",
+        "points": "147"
+    },
+    {
+        "name": "Reanimated SAM",
+        "points": "160"
+    },
+    {
+        "name": "Empty Fluid Tank",
+        "points": "170"
+    },
+    {
+        "name": "Packaged Heavy Oil Residue",
+        "points": "180"
+    },
+    {
+        "name": "Packaged Oil",
+        "points": "180"
+    },
+    {
+        "name": "Turbofuel",
+        "points": "225"
+    },
+    {
+        "name": "Diamonds",
+        "points": "240"
+    },
+    {
+        "name": "Stator",
+        "points": "240"
+    },
+    {
+        "name": "Alclad Aluminum Sheet",
+        "points": "266"
+    },
+    {
+        "name": "Packaged Fuel",
+        "points": "270"
+    },
+    {
+        "name": "Rocket Fuel",
+        "points": "289"
+    },
+    {
+        "name": "Aluminum Casing",
+        "points": "393"
+    },
+    {
+        "name": "Modular Frame",
+        "points": "408"
+    },
+    {
+        "name": "Battery",
+        "points": "465"
+    },
+    {
+        "name": "Smart Plating",
+        "points": "520"
+    },
+    {
+        "name": "Encased Industrial Beam",
+        "points": "528"
+    },
+    {
+        "name": "Packaged Turbofuel",
+        "points": "570"
+    },
+    {
+        "name": "Gas Filter",
+        "points": "608"
+    },
+    {
+        "name": "FICSMAS Decoration",
+        "points": "630"
+    },
+    {
+        "name": "Circuit Board",
+        "points": "696"
+    },
+    {
+        "name": "AI Limiter",
+        "points": "920"
+    },
+    {
+        "name": "Time Crystal",
+        "points": "960"
+    },
+    {
+        "name": "Packaged Rocket Fuel",
+        "points": "1028"
+    },
+    {
+        "name": "Versatile Framework",
+        "points": "1176"
+    },
+    {
+        "name": "Ficsite Trigon",
+        "points": "1291"
+    },
+    {
+        "name": "Automated Wiring",
+        "points": "1440"
+    },
+    {
+        "name": "Motor",
+        "points": "1520"
+    },
+    {
+        "name": "Dark Matter Crystal",
+        "points": "1780"
+    },
+    {
+        "name": "Ficsite Ingot",
+        "points": "1936"
+    },
+    {
+        "name": "SAM Fluctuator",
+        "points": "1968"
+    },
+    {
+        "name": "Iodine-Infused Filter",
+        "points": "2274"
+    },
+    {
+        "name": "Ionized Fuel",
+        "points": "2398"
+    },
+    {
+        "name": "Electromagnetic Control Rod",
+        "points": "2560"
+    },
+    {
+        "name": "Heat Sink",
+        "points": "2804"
+    },
+    {
+        "name": "Crystal Oscillator",
+        "points": "3072"
+    },
+    {
+        "name": "High-Speed Connector",
+        "points": "3776"
+    },
+    {
+        "name": "Packaged Ionized Fuel",
+        "points": "5246"
+    },
+    {
+        "name": "FICSMAS Wonder Star",
+        "points": "6540"
+    },
+    {
+        "name": "Computer",
+        "points": "8352"
+    },
+    {
+        "name": "Modular Engine",
+        "points": "9960"
+    },
+    {
+        "name": "Heavy Modular Frame",
+        "points": "10800"
+    },
+    {
+        "name": "Magnetic Field Generator",
+        "points": "11000"
+    },
+    {
+        "name": "Cooling System",
+        "points": "12006"
+    },
+    {
+        "name": "Radio Control Unit",
+        "points": "32352"
+    },
+    {
+        "name": "Superposition Oscillator",
+        "points": "37292"
+    },
+    {
+        "name": "Uranium Fuel Rod",
+        "points": "43468"
+    },
+    {
+        "name": "Fused Modular Frame",
+        "points": "62840"
+    },
+    {
+        "name": "Adaptive Control Unit",
+        "points": "76368"
+    },
+    {
+        "name": "Supercomputer",
+        "points": "97352"
+    },
+    {
+        "name": "Singularity Cell",
+        "points": "114675"
+    },
+    {
+        "name": "Plutonium Fuel Rod",
+        "points": "153184"
+    },
+    {
+        "name": "Turbo Motor",
+        "points": "240496"
+    },
+    {
+        "name": "Neural-Quantum Processor",
+        "points": "248034"
+    },
+    {
+        "name": "Pressure Conversion Cube",
+        "points": "255088"
+    },
+    {
+        "name": "Biochemical Sculptor",
+        "points": "301778"
+    },
+    {
+        "name": "Assembly Director System",
+        "points": "500176"
+    },
+    {
+        "name": "Nuclear Pasta",
+        "points": "538976"
+    },
+    {
+        "name": "AI Expansion Server",
+        "points": "597652"
+    },
+    {
+        "name": "Thermal Propulsion Rocket",
+        "points": "728508"
+    },
+    {
+        "name": "Ballistic Warp Drive",
+        "points": "2895334"
     }
 ]

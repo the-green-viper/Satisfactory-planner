@@ -1,4 +1,3 @@
-import json
 
 class machine:
     def __init__(self, name: str, power: float):
