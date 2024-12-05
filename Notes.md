@@ -7,7 +7,7 @@
 - Items are a sub-object of recipes
 - Maybe a dict to look up what recipes are available for a certain item
 ## Machines
-- Machines stores the name and power consumtion / production
+- Machines stores the name and power consumption / production
 - If a machine consumes power -> power is negative, otherwise positive
 
 ## Items 
@@ -16,3 +16,5 @@
 ## Recipes 
 Contains:
 - 
+# JSON structure
+Right now i'm using a custom format and scripts to export from the 'raw' game json. Might be better to use the game json and do the additional calculations when initializing the objects
