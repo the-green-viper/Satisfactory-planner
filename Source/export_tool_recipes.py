@@ -17,24 +17,24 @@ if __name__ == "__main__":
                 recipe_input = recipe_dict_full['mIngredients']
                 recipe_output = recipe_dict_full['mProduct']
                 recipe_duration = float(recipe_dict_full['mManufactoringDuration'])
-                recipe_building = recipe_dict_full['mProducedIn']
+                recipe_machine = recipe_dict_full['mProducedIn']
                 
                 hard_drive_recipe = 'Alternate' in recipe_name
                 
-                recipe_building_list = recipe_building.split(',')
-                for building in recipe_building_list:
+                recipe_machine_list = recipe_machine.split(',')
+                for machine in recipe_machine_list:
                     
-                    if not "Build_" in building:
-                        continue # skip every recipe that isn't made in a building
+                    if not "Build_" in machine:
+                        continue # skip every recipe that isn't made in a machine
                     
-                    recipe_building_class_name = building.split('.')[-1]
+                    recipe_machine_class_name = str.join('_C',machine.split('.')[-1].split('_C')[0:-1]) + '_C'
                     
                     recipe_per_minute_multiplier = 60/recipe_duration
                     
                     recipe_output_items_list = []
                     recipe_output_items = recipe_output.split(',')
                     for i in range(len(recipe_output_items)//2):    
-                        item_class_name = recipe_output_items[i*2].split('.')[-1]
+                        item_class_name = str.join('_C',recipe_output_items[i*2].split('.')[-1].split('_C')[0:-1]) + '_C'
                         
                         if i == 0:
                             item_amount_per_minute_per_output = 1.0 # is always one because i want to calculate how many input is required to create 1/min of output
@@ -51,7 +51,7 @@ if __name__ == "__main__":
                     recipe_input_items_list = []
                     recipe_input_items = recipe_input.split(',')
                     for i in range(len(recipe_input_items)//2):
-                        item_class_name = recipe_input_items[i*2].split('.')[-1]
+                        item_class_name = str.join('_C',recipe_input_items[i*2].split('.')[-1].split('_C')[0:-1]) + '_C'
                         
                         item_amount_string = recipe_input_items[i*2 + 1].split('=')[-1]
                         item_amount_per_minute_per_output = float(re.sub("[^0-9\.]", "", item_amount_string)) / main_output_amount
@@ -63,7 +63,7 @@ if __name__ == "__main__":
                         'name': recipe_name,
                         'outputs': recipe_output_items_list,
                         'inputs': recipe_input_items_list,
-                        'building': recipe_building_class_name,
+                        'machine': recipe_machine_class_name,
                         'hard_drive': hard_drive_recipe,
                         'single_machine_output': single_machine_output
                     }

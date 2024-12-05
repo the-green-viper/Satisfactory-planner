@@ -2,10 +2,10 @@
 class recipe:
     def __init__(self, name: str, outputs: tuple, inputs: tuple, single_machine_output: float, machine: str, hard_drive_recipe: bool, active: bool):
         self.name = name # string
-        self.outputs = outputs # tuple of tuples (item, amount), item is a string, amount is a float, amount is per singular main output per minute
-        self.inputs = inputs # tuple of tuples (item, amount), item is a string, amount is a float, amount is per singular main output per minute
-        self.single_machine_output = single_machine_output # float, the amount of main output per singular machine per minute
-        self.machine = machine # string
+        self.outputs = outputs # tuple of tuples (item, amount), item is an item object, amount is a float, amount is per singular main output per minute [#byproduct/(min*#output)] or [1/min]
+        self.inputs = inputs # tuple of tuples (item, amount), item is an item object, amount is a float, amount is per singular main output per minute [ #input/(min*#output)]
+        self.single_machine_output = single_machine_output # float, the amount of main output per singular machine per minute [ #output/(min*machine)]
+        self.machine = machine # machine object
         self.hard_drive_recipe = hard_drive_recipe # bool
         self.active = active # bool
         
@@ -37,10 +37,46 @@ class recipe:
     def toggle_active(self):
         self.active = not self.active  # toggle active status
 
-def recipe_decoder_factory(machine_list):    
+def recipe_decoder_factory(machine_list, items_list, item_recipe_lookup_dict): # the object hook takes a function as an input, this function is called and returns the function that will be used to decode the json
     def recipe_decoder(dct):
+
         for loaded_machine in machine_list:
-            if loaded_machine.get_name() == dct['machine']:
+            if loaded_machine.get_class_name() == dct['machine']:
                 machine = loaded_machine
-        return recipe(dct['name'], dct['outputs'], dct['inputs'], dct['single_machine_output'], machine, dct['harddrive_recipe'], dct['active'])
+                break
+            return None
+        
+        recipe_name = dct['name']
+        recipe_outputs = []
+        recipe_inputs = []
+        recipe_single_machine_output = dct['single_machine_output']
+        recipe_hard_drive_recipe = dct['hard_drive']
+        recipe_active = not (recipe_hard_drive_recipe or machine.get_class_name() == 'Build_Converter_C')
+
+        for output in dct['outputs']:
+            for item in items_list:
+                if item.get_class_name() == output[0]:
+                    recipe_outputs.append((item, output[1]))
+                    break
+        
+        for input in dct['inputs']:
+            for item in items_list:
+                if item.get_class_name() == input[0]:
+                    recipe_inputs.append((item, input[1]))
+                    break
+        
+        recipe_object = recipe(
+            recipe_name,
+            tuple(recipe_outputs),
+            tuple(recipe_inputs),
+            recipe_single_machine_output,
+            machine,
+            recipe_hard_drive_recipe,
+            recipe_active
+        )
+
+        for output in recipe_outputs:
+            item_recipe_lookup_dict[output[0].get_class_name()].append(recipe_object)
+
+        return recipe_object
     return recipe_decoder

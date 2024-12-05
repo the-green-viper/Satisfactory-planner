@@ -1,62 +1,62 @@
 [
     {
         "name": "Smelter",
-        "power": -4.0
+        "power": 4.0,
+        "class_name": "Build_SmelterMk1_C"
     },
     {
         "name": "Constructor",
-        "power": -4.0
-    },
-    {
-        "name": "Assembler",
-        "power": -15.0
-    },
-    {
-        "name": "Manufacturer",
-        "power": -55.0
-    },
-    {
-        "name": "Refinery",
-        "power": -30.0
-    },
-    {
-        "name": "Foundry",
-        "power": -16.0
+        "power": 4.0,
+        "class_name": "Build_ConstructorMk1_C"
     },
     {
         "name": "Miner Mk.1",
-        "power": -5.0
+        "power": 5.0,
+        "class_name": "Build_MinerMk1_C"
+    },
+    {
+        "name": "Packager",
+        "power": 10.0,
+        "class_name": "Build_Packager_C"
     },
     {
         "name": "Miner Mk.2",
-        "power": -12.0
+        "power": 15.0,
+        "class_name": "Build_MinerMk2_C"
+    },
+    {
+        "name": "Assembler",
+        "power": 15.0,
+        "class_name": "Build_AssemblerMk1_C"
+    },
+    {
+        "name": "Foundry",
+        "power": 16.0,
+        "class_name": "Build_FoundryMk1_C"
+    },
+    {
+        "name": "Refinery",
+        "power": 30.0,
+        "class_name": "Build_OilRefinery_C"
+    },
+    {
+        "name": "Oil Extractor",
+        "power": 40.0,
+        "class_name": "Build_OilPump_C"
     },
     {
         "name": "Miner Mk.3",
-        "power": -30.0
+        "power": 45.0,
+        "class_name": "Build_MinerMk3_C"
     },
     {
-        "name": "Oil Pump",
-        "power": -40.0
+        "name": "Manufacturer",
+        "power": 55.0,
+        "class_name": "Build_ManufacturerMk1_C"
     },
     {
-        "name": "Oil Refinery",
-        "power": -50.0
-    },
-    {
-        "name": "Water Extractor",
-        "power": -20.0
-    },
-    {
-        "name": "Coal Generator",
-        "power": 50.0
-    },
-    {
-        "name": "Fuel Generator",
-        "power": 150.0
-    },
-    {
-        "name": "Nuclear Power Plant",
-        "power": 2500.0
+        "name": "Blender",
+        "power": 75.0,
+        "class_name": "Build_Blender_C"
     }
 ]
