@@ -1,8 +1,9 @@
 
 class item:
-    def __init__(self, name: str, points: int):
-        self.name = name # string
-        self.points = int(points) # int 
+    def __init__(self, name: str, points: int, class_name: str):
+        self.name = name # string, name of item
+        self.points = int(points) # int, rescource sink points
+        self.class_name = class_name # sting, name in game json files
     
     ### getters
     
@@ -13,4 +14,4 @@ class item:
         return self.points 
     
 def item_decoder(dct):
-    return item(dct['name'], dct['power'])
+    return item(dct['name'], dct['points'])

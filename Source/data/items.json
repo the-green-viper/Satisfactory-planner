@@ -1,538 +1,672 @@
 [
     {
         "name": "Uranium Waste",
-        "points": "0"
+        "points": "0",
+        "class_name": "Desc_NuclearWaste_C"
     },
     {
         "name": "Plutonium Waste",
-        "points": "0"
+        "points": "0",
+        "class_name": "Desc_PlutoniumWaste_C"
     },
     {
         "name": "Encased Plutonium Cell",
-        "points": "0"
+        "points": "0",
+        "class_name": "Desc_PlutoniumCell_C"
     },
     {
         "name": "Plutonium Pellet",
-        "points": "0"
+        "points": "0",
+        "class_name": "Desc_PlutoniumPellet_C"
     },
     {
         "name": "Non-Fissile Uranium",
-        "points": "0"
+        "points": "0",
+        "class_name": "Desc_NonFissibleUranium_C"
     },
     {
         "name": "Dissolved Silica",
-        "points": "0"
+        "points": "0",
+        "class_name": "Desc_DissolvedSilica_C"
     },
     {
         "name": "Ficsonium",
-        "points": "0"
+        "points": "0",
+        "class_name": "Desc_Ficsonium_C"
     },
     {
         "name": "Alien Protein",
-        "points": "0"
+        "points": "0",
+        "class_name": "Desc_AlienProtein_C"
     },
     {
         "name": "Blue Power Slug",
-        "points": "0"
+        "points": "0",
+        "class_name": "Desc_Crystal_C"
     },
     {
         "name": "Alien DNA Capsule",
-        "points": "0"
+        "points": "0",
+        "class_name": "Desc_AlienDNACapsule_C"
     },
     {
         "name": "Mercer Sphere",
-        "points": "0"
+        "points": "0",
+        "class_name": "Desc_WAT2_C"
     },
     {
         "name": "Purple Power Slug",
-        "points": "0"
+        "points": "0",
+        "class_name": "Desc_Crystal_mk3_C"
     },
     {
         "name": "Yellow Power Slug",
-        "points": "0"
+        "points": "0",
+        "class_name": "Desc_Crystal_mk2_C"
     },
     {
         "name": "Ficsonium Fuel Rod",
-        "points": "0"
+        "points": "0",
+        "class_name": "Desc_FicsoniumFuelRod_C"
     },
     {
         "name": "Blue FICSMAS Ornament",
-        "points": "1"
+        "points": "1",
+        "class_name": "Desc_XmasBall2_C"
     },
     {
         "name": "FICSMAS Gift",
-        "points": "1"
+        "points": "1",
+        "class_name": "Desc_Gift_C"
     },
     {
         "name": "Iron Ore",
-        "points": "1"
+        "points": "1",
+        "class_name": "Desc_OreIron_C"
     },
     {
         "name": "Iron Ingot",
-        "points": "2"
+        "points": "2",
+        "class_name": "Desc_IronIngot_C"
     },
     {
         "name": "Screw",
-        "points": "2"
+        "points": "2",
+        "class_name": "Desc_IronScrew_C"
     },
     {
         "name": "FICSMAS Tree Branch",
-        "points": "2"
+        "points": "2",
+        "class_name": "Desc_XmasBranch_C"
     },
     {
         "name": "Red FICSMAS Ornament",
-        "points": "2"
+        "points": "2",
+        "class_name": "Desc_XmasBall1_C"
     },
     {
         "name": "Limestone",
-        "points": "2"
+        "points": "2",
+        "class_name": "Desc_Stone_C"
     },
     {
         "name": "Coal",
-        "points": "3"
+        "points": "3",
+        "class_name": "Desc_Coal_C"
     },
     {
         "name": "Copper Ore",
-        "points": "3"
+        "points": "3",
+        "class_name": "Desc_OreCopper_C"
     },
     {
         "name": "Iron Rod",
-        "points": "4"
+        "points": "4",
+        "class_name": "Desc_IronRod_C"
     },
     {
         "name": "FICSMAS Bow",
-        "points": "4"
+        "points": "4",
+        "class_name": "Desc_XmasBow_C"
     },
     {
         "name": "Actual Snow",
-        "points": "5"
+        "points": "5",
+        "class_name": "Desc_Snow_C"
     },
     {
         "name": "Water",
-        "points": "5"
+        "points": "5",
+        "class_name": "Desc_Water_C"
     },
     {
         "name": "Iron Plate",
-        "points": "6"
+        "points": "6",
+        "class_name": "Desc_IronPlate_C"
     },
     {
         "name": "Wire",
-        "points": "6"
+        "points": "6",
+        "class_name": "Desc_Wire_C"
     },
     {
         "name": "Copper Ingot",
-        "points": "6"
+        "points": "6",
+        "class_name": "Desc_CopperIngot_C"
     },
     {
         "name": "Candy Cane",
-        "points": "6"
+        "points": "6",
+        "class_name": "Desc_CandyCane_C"
     },
     {
         "name": "Caterium Ore",
-        "points": "7"
+        "points": "7",
+        "class_name": "Desc_OreGold_C"
     },
     {
         "name": "Steel Ingot",
-        "points": "8"
+        "points": "8",
+        "class_name": "Desc_SteelIngot_C"
     },
     {
         "name": "Bauxite",
-        "points": "8"
+        "points": "8",
+        "class_name": "Desc_OreBauxite_C"
     },
     {
         "name": "Nitrogen Gas",
-        "points": "10"
+        "points": "10",
+        "class_name": "Desc_NitrogenGas_C"
     },
     {
         "name": "Sulfur",
-        "points": "11"
+        "points": "11",
+        "class_name": "Desc_Sulfur_C"
     },
     {
         "name": "Concrete",
-        "points": "12"
+        "points": "12",
+        "class_name": "Desc_Cement_C"
     },
     {
         "name": "Polymer Resin",
-        "points": "12"
+        "points": "12",
+        "class_name": "Desc_PolymerResin_C"
     },
     {
         "name": "Black Powder",
-        "points": "14"
+        "points": "14",
+        "class_name": "Desc_Gunpowder_C"
     },
     {
         "name": "Raw Quartz",
-        "points": "15"
+        "points": "15",
+        "class_name": "Desc_RawQuartz_C"
     },
     {
         "name": "Sulfuric Acid",
-        "points": "16"
+        "points": "16",
+        "class_name": "Desc_SulfuricAcid_C"
     },
     {
         "name": "Quickwire",
-        "points": "17"
+        "points": "17",
+        "class_name": "Desc_HighSpeedWire_C"
     },
     {
         "name": "Iron FICSMAS Ornament",
-        "points": "18"
+        "points": "18",
+        "class_name": "Desc_XmasBall4_C"
     },
     {
         "name": "Silica",
-        "points": "20"
+        "points": "20",
+        "class_name": "Desc_Silica_C"
     },
     {
         "name": "Petroleum Coke",
-        "points": "20"
+        "points": "20",
+        "class_name": "Desc_PetroleumCoke_C"
     },
     {
         "name": "Alumina Solution",
-        "points": "20"
+        "points": "20",
+        "class_name": "Desc_AluminaSolution_C"
     },
     {
         "name": "SAM",
-        "points": "20"
+        "points": "20",
+        "class_name": "Desc_SAM_C"
     },
     {
         "name": "Cable",
-        "points": "24"
+        "points": "24",
+        "class_name": "Desc_Cable_C"
     },
     {
         "name": "Copper Sheet",
-        "points": "24"
+        "points": "24",
+        "class_name": "Desc_CopperSheet_C"
     },
     {
         "name": "Steel Pipe",
-        "points": "24"
+        "points": "24",
+        "class_name": "Desc_SteelPipe_C"
     },
     {
         "name": "Aluminum Scrap",
-        "points": "27"
+        "points": "27",
+        "class_name": "Desc_AluminumScrap_C"
     },
     {
         "name": "Compacted Coal",
-        "points": "28"
+        "points": "28",
+        "class_name": "Desc_CompactedCoal_C"
     },
     {
         "name": "Heavy Oil Residue",
-        "points": "30"
+        "points": "30",
+        "class_name": "Desc_HeavyOilResidue_C"
     },
     {
         "name": "Crude Oil",
-        "points": "30"
+        "points": "30",
+        "class_name": "Desc_LiquidOil_C"
     },
     {
         "name": "Copper FICSMAS Ornament",
-        "points": "32"
+        "points": "32",
+        "class_name": "Desc_XmasBall3_C"
     },
     {
         "name": "Uranium",
-        "points": "35"
+        "points": "35",
+        "class_name": "Desc_OreUranium_C"
     },
     {
         "name": "Caterium Ingot",
-        "points": "42"
+        "points": "42",
+        "class_name": "Desc_GoldIngot_C"
     },
     {
         "name": "Quartz Crystal",
-        "points": "50"
+        "points": "50",
+        "class_name": "Desc_QuartzCrystal_C"
     },
     {
         "name": "Smokeless Powder",
-        "points": "58"
+        "points": "58",
+        "class_name": "Desc_GunpowderMK2_C"
     },
     {
         "name": "Empty Canister",
-        "points": "60"
+        "points": "60",
+        "class_name": "Desc_FluidCanister_C"
     },
     {
         "name": "Rubber",
-        "points": "60"
+        "points": "60",
+        "class_name": "Desc_Rubber_C"
     },
     {
         "name": "Steel Beam",
-        "points": "64"
+        "points": "64",
+        "class_name": "Desc_SteelPlate_C"
     },
     {
         "name": "Copper Powder",
-        "points": "72"
+        "points": "72",
+        "class_name": "Desc_CopperDust_C"
     },
     {
         "name": "Fuel",
-        "points": "75"
+        "points": "75",
+        "class_name": "Desc_LiquidFuel_C"
     },
     {
         "name": "Plastic",
-        "points": "75"
+        "points": "75",
+        "class_name": "Desc_Plastic_C"
     },
     {
         "name": "Nitric Acid",
-        "points": "94"
+        "points": "94",
+        "class_name": "Desc_NitricAcid_C"
     },
     {
         "name": "Excited Photonic Matter",
-        "points": "100"
+        "points": "100",
+        "class_name": "Desc_QuantumEnergy_C"
     },
     {
         "name": "FICSMAS Ornament Bundle",
-        "points": "100"
+        "points": "100",
+        "class_name": "Desc_XmasBallCluster_C"
     },
     {
         "name": "Reinforced Iron Plate",
-        "points": "120"
+        "points": "120",
+        "class_name": "Desc_IronPlateReinforced_C"
     },
     {
         "name": "Dark Matter Residue",
-        "points": "130"
+        "points": "130",
+        "class_name": "Desc_DarkEnergy_C"
     },
     {
         "name": "Packaged Water",
-        "points": "130"
+        "points": "130",
+        "class_name": "Desc_PackagedWater_C"
     },
     {
         "name": "Aluminum Ingot",
-        "points": "131"
+        "points": "131",
+        "class_name": "Desc_AluminumIngot_C"
     },
     {
         "name": "Rotor",
-        "points": "140"
+        "points": "140",
+        "class_name": "Desc_Rotor_C"
     },
     {
         "name": "Encased Uranium Cell",
-        "points": "147"
+        "points": "147",
+        "class_name": "Desc_UraniumCell_C"
     },
     {
         "name": "Reanimated SAM",
-        "points": "160"
+        "points": "160",
+        "class_name": "Desc_SAMIngot_C"
     },
     {
         "name": "Empty Fluid Tank",
-        "points": "170"
+        "points": "170",
+        "class_name": "Desc_GasTank_C"
     },
     {
         "name": "Packaged Heavy Oil Residue",
-        "points": "180"
+        "points": "180",
+        "class_name": "Desc_PackagedOilResidue_C"
     },
     {
         "name": "Packaged Oil",
-        "points": "180"
+        "points": "180",
+        "class_name": "Desc_PackagedOil_C"
     },
     {
         "name": "Turbofuel",
-        "points": "225"
+        "points": "225",
+        "class_name": "Desc_LiquidTurboFuel_C"
     },
     {
         "name": "Diamonds",
-        "points": "240"
+        "points": "240",
+        "class_name": "Desc_Diamond_C"
     },
     {
         "name": "Stator",
-        "points": "240"
+        "points": "240",
+        "class_name": "Desc_Stator_C"
     },
     {
         "name": "Alclad Aluminum Sheet",
-        "points": "266"
+        "points": "266",
+        "class_name": "Desc_AluminumPlate_C"
     },
     {
         "name": "Packaged Fuel",
-        "points": "270"
+        "points": "270",
+        "class_name": "Desc_Fuel_C"
     },
     {
         "name": "Rocket Fuel",
-        "points": "289"
+        "points": "289",
+        "class_name": "Desc_RocketFuel_C"
     },
     {
         "name": "Aluminum Casing",
-        "points": "393"
+        "points": "393",
+        "class_name": "Desc_AluminumCasing_C"
     },
     {
         "name": "Modular Frame",
-        "points": "408"
+        "points": "408",
+        "class_name": "Desc_ModularFrame_C"
     },
     {
         "name": "Battery",
-        "points": "465"
+        "points": "465",
+        "class_name": "Desc_Battery_C"
     },
     {
         "name": "Smart Plating",
-        "points": "520"
+        "points": "520",
+        "class_name": "Desc_SpaceElevatorPart_1_C"
     },
     {
         "name": "Encased Industrial Beam",
-        "points": "528"
+        "points": "528",
+        "class_name": "Desc_SteelPlateReinforced_C"
     },
     {
         "name": "Packaged Turbofuel",
-        "points": "570"
+        "points": "570",
+        "class_name": "Desc_TurboFuel_C"
     },
     {
         "name": "Gas Filter",
-        "points": "608"
+        "points": "608",
+        "class_name": "Desc_Filter_C"
     },
     {
         "name": "FICSMAS Decoration",
-        "points": "630"
+        "points": "630",
+        "class_name": "Desc_XmasWreath_C"
     },
     {
         "name": "Circuit Board",
-        "points": "696"
+        "points": "696",
+        "class_name": "Desc_CircuitBoard_C"
     },
     {
         "name": "AI Limiter",
-        "points": "920"
+        "points": "920",
+        "class_name": "Desc_CircuitBoardHighSpeed_C"
     },
     {
         "name": "Time Crystal",
-        "points": "960"
+        "points": "960",
+        "class_name": "Desc_TimeCrystal_C"
     },
     {
         "name": "Packaged Rocket Fuel",
-        "points": "1028"
+        "points": "1028",
+        "class_name": "Desc_PackagedRocketFuel_C"
     },
     {
         "name": "Versatile Framework",
-        "points": "1176"
+        "points": "1176",
+        "class_name": "Desc_SpaceElevatorPart_2_C"
     },
     {
         "name": "Ficsite Trigon",
-        "points": "1291"
+        "points": "1291",
+        "class_name": "Desc_FicsiteMesh_C"
     },
     {
         "name": "Automated Wiring",
-        "points": "1440"
+        "points": "1440",
+        "class_name": "Desc_SpaceElevatorPart_3_C"
     },
     {
         "name": "Motor",
-        "points": "1520"
+        "points": "1520",
+        "class_name": "Desc_Motor_C"
     },
     {
         "name": "Dark Matter Crystal",
-        "points": "1780"
+        "points": "1780",
+        "class_name": "Desc_DarkMatter_C"
     },
     {
         "name": "Ficsite Ingot",
-        "points": "1936"
+        "points": "1936",
+        "class_name": "Desc_FicsiteIngot_C"
     },
     {
         "name": "SAM Fluctuator",
-        "points": "1968"
+        "points": "1968",
+        "class_name": "Desc_SAMFluctuator_C"
     },
     {
         "name": "Iodine-Infused Filter",
-        "points": "2274"
+        "points": "2274",
+        "class_name": "Desc_HazmatFilter_C"
     },
     {
         "name": "Ionized Fuel",
-        "points": "2398"
+        "points": "2398",
+        "class_name": "Desc_IonizedFuel_C"
     },
     {
         "name": "Electromagnetic Control Rod",
-        "points": "2560"
+        "points": "2560",
+        "class_name": "Desc_ElectromagneticControlRod_C"
     },
     {
         "name": "Heat Sink",
-        "points": "2804"
+        "points": "2804",
+        "class_name": "Desc_AluminumPlateReinforced_C"
     },
     {
         "name": "Crystal Oscillator",
-        "points": "3072"
+        "points": "3072",
+        "class_name": "Desc_CrystalOscillator_C"
     },
     {
         "name": "High-Speed Connector",
-        "points": "3776"
+        "points": "3776",
+        "class_name": "Desc_HighSpeedConnector_C"
     },
     {
         "name": "Packaged Ionized Fuel",
-        "points": "5246"
+        "points": "5246",
+        "class_name": "Desc_PackagedIonizedFuel_C"
     },
     {
         "name": "FICSMAS Wonder Star",
-        "points": "6540"
+        "points": "6540",
+        "class_name": "Desc_XmasStar_C"
     },
     {
         "name": "Computer",
-        "points": "8352"
+        "points": "8352",
+        "class_name": "Desc_Computer_C"
     },
     {
         "name": "Modular Engine",
-        "points": "9960"
+        "points": "9960",
+        "class_name": "Desc_SpaceElevatorPart_4_C"
     },
     {
         "name": "Heavy Modular Frame",
-        "points": "10800"
+        "points": "10800",
+        "class_name": "Desc_ModularFrameHeavy_C"
     },
     {
         "name": "Magnetic Field Generator",
-        "points": "11000"
+        "points": "11000",
+        "class_name": "Desc_SpaceElevatorPart_6_C"
     },
     {
         "name": "Cooling System",
-        "points": "12006"
+        "points": "12006",
+        "class_name": "Desc_CoolingSystem_C"
     },
     {
         "name": "Radio Control Unit",
-        "points": "32352"
+        "points": "32352",
+        "class_name": "Desc_ModularFrameLightweight_C"
     },
     {
         "name": "Superposition Oscillator",
-        "points": "37292"
+        "points": "37292",
+        "class_name": "Desc_QuantumOscillator_C"
     },
     {
         "name": "Uranium Fuel Rod",
-        "points": "43468"
+        "points": "43468",
+        "class_name": "Desc_NuclearFuelRod_C"
     },
     {
         "name": "Fused Modular Frame",
-        "points": "62840"
+        "points": "62840",
+        "class_name": "Desc_ModularFrameFused_C"
     },
     {
         "name": "Adaptive Control Unit",
-        "points": "76368"
+        "points": "76368",
+        "class_name": "Desc_SpaceElevatorPart_5_C"
     },
     {
         "name": "Supercomputer",
-        "points": "97352"
+        "points": "97352",
+        "class_name": "Desc_ComputerSuper_C"
     },
     {
         "name": "Singularity Cell",
-        "points": "114675"
+        "points": "114675",
+        "class_name": "Desc_SingularityCell_C"
     },
     {
         "name": "Plutonium Fuel Rod",
-        "points": "153184"
+        "points": "153184",
+        "class_name": "Desc_PlutoniumFuelRod_C"
     },
     {
         "name": "Turbo Motor",
-        "points": "240496"
+        "points": "240496",
+        "class_name": "Desc_MotorLightweight_C"
     },
     {
         "name": "Neural-Quantum Processor",
-        "points": "248034"
+        "points": "248034",
+        "class_name": "Desc_TemporalProcessor_C"
     },
     {
         "name": "Pressure Conversion Cube",
-        "points": "255088"
+        "points": "255088",
+        "class_name": "Desc_PressureConversionCube_C"
     },
     {
         "name": "Biochemical Sculptor",
-        "points": "301778"
+        "points": "301778",
+        "class_name": "Desc_SpaceElevatorPart_10_C"
     },
     {
         "name": "Assembly Director System",
-        "points": "500176"
+        "points": "500176",
+        "class_name": "Desc_SpaceElevatorPart_7_C"
     },
     {
         "name": "Nuclear Pasta",
-        "points": "538976"
+        "points": "538976",
+        "class_name": "Desc_SpaceElevatorPart_9_C"
     },
     {
         "name": "AI Expansion Server",
-        "points": "597652"
+        "points": "597652",
+        "class_name": "Desc_SpaceElevatorPart_12_C"
     },
     {
         "name": "Thermal Propulsion Rocket",
-        "points": "728508"
+        "points": "728508",
+        "class_name": "Desc_SpaceElevatorPart_8_C"
     },
     {
         "name": "Ballistic Warp Drive",
-        "points": "2895334"
+        "points": "2895334",
+        "class_name": "Desc_SpaceElevatorPart_11_C"
     }
 ]

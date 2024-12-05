@@ -4,7 +4,6 @@ A planner tool for satisfactory, because the online planners are too limiting.
 
 import json
 import os
-import sys
 
 # custom modules
 # import modules.recipes as recipes
