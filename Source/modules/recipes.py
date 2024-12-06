@@ -1,4 +1,5 @@
 
+
 class recipe:
     def __init__(self, name: str, outputs: tuple, inputs: tuple, single_machine_output: float, machine: str, hard_drive_recipe: bool, active: bool):
         self.name = name # string
@@ -40,10 +41,12 @@ class recipe:
 def recipe_decoder_factory(machine_list, items_list, item_recipe_lookup_dict): # the object hook takes a function as an input, this function is called and returns the function that will be used to decode the json
     def recipe_decoder(dct):
 
+        machine = None
         for loaded_machine in machine_list:
             if loaded_machine.get_class_name() == dct['machine']:
                 machine = loaded_machine
                 break
+        if machine is None:
             return None
         
         recipe_name = dct['name']
@@ -80,3 +83,30 @@ def recipe_decoder_factory(machine_list, items_list, item_recipe_lookup_dict): #
 
         return recipe_object
     return recipe_decoder
+
+def calculate_recipe_paths(desired_output, item_recipe_lookup_dict):
+    try:
+        possible_recipes = item_recipe_lookup_dict[desired_output.get_class_name()]
+    except KeyError:
+        return []
+    
+    recipes = []
+    
+    for possible_recipes_index in range(len(possible_recipes)):
+        current_recipe = possible_recipes[possible_recipes_index]
+        if current_recipe.get_active(): 
+            recipe_chain = [current_recipe.get_name()]
+            for input in current_recipe.get_inputs():
+                recipe_chain.append(calculate_recipe_paths(input[0], item_recipe_lookup_dict))
+            recipes.append(recipe_chain)
+    if len(recipes) > 1:
+        return tuple(recipes)
+    elif len(recipes) == 1:
+        return recipes[0]
+    else:
+        return []
+ 
+# [recipe 0.1, alt recipe 0.1]           
+# ([recipe 0.1, [recipe 1.1]], [alt recipe 0.1, [recipe 1.1]])
+# ([recipe 0.1, [recipe 1.1, [recipe 2.1, (recipe 2.2, alt recipe 2.2)]]], [alt recipe 0.1, [recipe 1.1]])
+# ([recipe 0.1, [recipe 1.1, [recipe 2.1, (recipe 2.2, alt recipe 2.2)]]], [alt recipe 0.1, [recipe 1.1]])

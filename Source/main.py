@@ -1,10 +1,9 @@
 """
 A planner tool for satisfactory, because the online planners are too limiting.
 """
-
 import json
 import os
-
+# import casadi
 # custom modules
 import modules.recipes as recipes
 import modules.items as items
@@ -34,6 +33,16 @@ if __name__ == "__main__":
 
     with open(recipes_json_path) as recipes_json:
         recipe_list = json.load(recipes_json, object_hook=recipes.recipe_decoder_factory(machine_list, items_list, item_recipe_lookup_dict))
+        recipe_list = [recipe for recipe in recipe_list if recipe is not None]
 
+    # Optimization
+    # optimizer = casadi.Opti()
+
+    # get the input and output constraints
     output_constraints = []
     input_constraints = []
+    
+    # calculate the recipe paths
+    print(recipes.calculate_recipe_paths(item_name_lookup_dict['Reinforced Iron Plate'], item_recipe_lookup_dict))
+    
+    
