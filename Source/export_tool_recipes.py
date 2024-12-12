@@ -8,66 +8,90 @@ if __name__ == "__main__":
         
         vanilla_recipes_unpacked = json.load(vannila_recipes_json)
         
-        for recipes in vanilla_recipes_unpacked:
+        # Normal recipes
+        recipes = vanilla_recipes_unpacked[0]
             
-            recipes_raw_list = recipes['Classes']
-            for recipe_dict_full in recipes_raw_list:
+        recipes_raw_list = recipes['Classes']
+        for recipe_dict_full in recipes_raw_list:
+            
+            recipe_name = recipe_dict_full['mDisplayName']
+            recipe_input = recipe_dict_full['mIngredients']
+            recipe_output = recipe_dict_full['mProduct']
+            recipe_duration = float(recipe_dict_full['mManufactoringDuration'])
+            recipe_machine = recipe_dict_full['mProducedIn']
+            
+            hard_drive_recipe = 'Alternate' in recipe_name
+            
+            recipe_machine_list = recipe_machine.split(',')
+            for machine in recipe_machine_list:
                 
-                recipe_name = recipe_dict_full['mDisplayName']
-                recipe_input = recipe_dict_full['mIngredients']
-                recipe_output = recipe_dict_full['mProduct']
-                recipe_duration = float(recipe_dict_full['mManufactoringDuration'])
-                recipe_machine = recipe_dict_full['mProducedIn']
+                if not "Build_" in machine:
+                    continue # skip every recipe that isn't made in a machine
                 
-                hard_drive_recipe = 'Alternate' in recipe_name
+                recipe_machine_class_name = str.join('_C',machine.split('.')[-1].split('_C')[0:-1]) + '_C'
                 
-                recipe_machine_list = recipe_machine.split(',')
-                for machine in recipe_machine_list:
+                recipe_per_minute_multiplier = 60/recipe_duration
+                
+                recipe_output_items_list = []
+                recipe_output_items = recipe_output.split(',')
+                for i in range(len(recipe_output_items)//2):    
+                    item_class_name = str.join('_C',recipe_output_items[i*2].split('.')[-1].split('_C')[0:-1]) + '_C'
                     
-                    if not "Build_" in machine:
-                        continue # skip every recipe that isn't made in a machine
-                    
-                    recipe_machine_class_name = str.join('_C',machine.split('.')[-1].split('_C')[0:-1]) + '_C'
-                    
-                    recipe_per_minute_multiplier = 60/recipe_duration
-                    
-                    recipe_output_items_list = []
-                    recipe_output_items = recipe_output.split(',')
-                    for i in range(len(recipe_output_items)//2):    
-                        item_class_name = str.join('_C',recipe_output_items[i*2].split('.')[-1].split('_C')[0:-1]) + '_C'
+                    if i == 0:
+                        item_amount_per_minute_per_output = 1.0 # is always one because i want to calculate how many input is required to create 1/min of output
+                        main_output_amount_string = recipe_output_items[i*2 + 1].split('=')[-1]
+                        main_output_amount = float(re.sub("[^0-9\.]", "", main_output_amount_string)) 
+                    else:
+                        item_amount_string = recipe_output_items[i*2 + 1].split('=')[-1]
+                        item_amount_per_minute_per_output =  float(re.sub("[^0-9\.]", "", item_amount_string))  / main_output_amount
                         
-                        if i == 0:
-                            item_amount_per_minute_per_output = 1.0 # is always one because i want to calculate how many input is required to create 1/min of output
-                            main_output_amount_string = recipe_output_items[i*2 + 1].split('=')[-1]
-                            main_output_amount = float(re.sub("[^0-9\.]", "", main_output_amount_string)) 
-                        else:
-                            item_amount_string = recipe_output_items[i*2 + 1].split('=')[-1]
-                            item_amount_per_minute_per_output =  float(re.sub("[^0-9\.]", "", item_amount_string))  / main_output_amount
-                            
-                        recipe_output_items_list.append((item_class_name,item_amount_per_minute_per_output))
-                        
-                    single_machine_output = main_output_amount * recipe_per_minute_multiplier # to calculate the amount of machines needed for a certain amount of main output (= items / (minute*machine))  
+                    recipe_output_items_list.append((item_class_name,item_amount_per_minute_per_output))
+                    
+                single_machine_output = main_output_amount * recipe_per_minute_multiplier # to calculate the amount of machines needed for a certain amount of main output (= items / (minute*machine))  
 
-                    recipe_input_items_list = []
-                    recipe_input_items = recipe_input.split(',')
-                    for i in range(len(recipe_input_items)//2):
-                        item_class_name = str.join('_C',recipe_input_items[i*2].split('.')[-1].split('_C')[0:-1]) + '_C'
-                        
-                        item_amount_string = recipe_input_items[i*2 + 1].split('=')[-1]
-                        item_amount_per_minute_per_output = float(re.sub("[^0-9\.]", "", item_amount_string)) / main_output_amount
-                        
-                        recipe_input_items_list.append((item_class_name,item_amount_per_minute_per_output))
+                recipe_input_items_list = []
+                recipe_input_items = recipe_input.split(',')
+                for i in range(len(recipe_input_items)//2):
+                    item_class_name = str.join('_C',recipe_input_items[i*2].split('.')[-1].split('_C')[0:-1]) + '_C'
                     
+                    item_amount_string = recipe_input_items[i*2 + 1].split('=')[-1]
+                    item_amount_per_minute_per_output = float(re.sub("[^0-9\.]", "", item_amount_string)) / main_output_amount
                     
-                    recipe_dict_select = {
-                        'name': recipe_name,
-                        'outputs': recipe_output_items_list,
-                        'inputs': recipe_input_items_list,
-                        'machine': recipe_machine_class_name,
-                        'hard_drive': hard_drive_recipe,
-                        'single_machine_output': single_machine_output
-                    }
-                    recipes_list.append(recipe_dict_select)
+                    recipe_input_items_list.append((item_class_name,item_amount_per_minute_per_output))
+                
+                
+                recipe_dict_select = {
+                    'name': recipe_name,
+                    'outputs': recipe_output_items_list,
+                    'inputs': recipe_input_items_list,
+                    'machine': recipe_machine_class_name,
+                    'hard_drive': hard_drive_recipe,
+                    'single_machine_output': single_machine_output
+                }
+                recipes_list.append(recipe_dict_select)
+        # Raw rescources
+        raw_resources = vanilla_recipes_unpacked[1]
+        recipes_raw_list = raw_resources['Classes']
+
+        
+                
+
+        for recipe_dict_full in recipes_raw_list:
+            recipe_name = recipe_dict_full['mDisplayName']
+            recipe_output = recipe_dict_full['ClassName']
+            recipe_form = recipe_dict_full['mForm']
+
+        if recipe_form == 'RF_SOLID':
+            recipe_machine = ['Build_MinerMk1_C', 'Build_MinerMk2_C', 'Build_MinerMk3_C']
+        elif recipe_form == 'RF_LIQUID':
+            if recipe_output == 'Desc_LiquidOil_C':
+                recipe_machine = ['Build_OilPump_C', 'Build_FrackingExtractor_C']
+            elif recipe_output == 'Desc_Water_C':
+                recipe_machine = ['Build_WaterPump_C', 'Build_FrackingExtractor_C']
+        elif recipe_form == 'RF_GAS':
+            if recipe_output == 'Desc_NitrogenGas_C':
+                recipe_machine = ['Build_GasPump_C', 'Build_FrackingExtractor_C']
+        
 
 
     recipes_list.sort(key=lambda x: x['name'])

@@ -17,6 +17,9 @@ if __name__ == "__main__":
     file_dir = os.path.dirname(os.path.abspath(__file__)) # should be .../Source
     json_location = os.path.join(file_dir,"data")
 
+    with open(os.path.join(file_dir,os.path.join(file_dir, "Vanilla data"), 'sat.json'), encoding='utf-16') as vanilla_recipes_json:
+        a = vanilla_recipes_json.read()
+
     machines_json_path = os.path.join(json_location, "machines.json")
     items_json_path = os.path.join(json_location, "items.json")
     recipes_json_path = os.path.join(json_location, "recipes.json")
