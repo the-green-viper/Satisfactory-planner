@@ -1,9 +1,10 @@
 
 class machine:
-    def __init__(self, name: str, power: float, class_name: str):
+    def __init__(self, name: str, power: float, class_name: str, variable_power: bool):
         self.name = name
         self.power = power
         self.class_name = class_name
+        self.variable_power = variable_power
     
     ### getters
     
@@ -16,5 +17,5 @@ class machine:
     def get_class_name(self):
         return self.class_name
     
-def machine_decoder(dct):
-    return machine(dct['name'], dct['power'], dct['class_name'])
+    def get_variable_power(self):
+        return self.variable_power

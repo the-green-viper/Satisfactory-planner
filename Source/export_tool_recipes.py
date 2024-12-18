@@ -70,27 +70,27 @@ if __name__ == "__main__":
                 }
                 recipes_list.append(recipe_dict_select)
         # Raw rescources
-        raw_resources = vanilla_recipes_unpacked[1]
-        recipes_raw_list = raw_resources['Classes']
+        # raw_resources = vanilla_recipes_unpacked[1]
+        # recipes_raw_list = raw_resources['Classes']
 
         
                 
 
-        for recipe_dict_full in recipes_raw_list:
-            recipe_name = recipe_dict_full['mDisplayName']
-            recipe_output = recipe_dict_full['ClassName']
-            recipe_form = recipe_dict_full['mForm']
+        # for recipe_dict_full in recipes_raw_list:
+        #     recipe_name = recipe_dict_full['mDisplayName']
+        #     recipe_output = recipe_dict_full['ClassName']
+        #     recipe_form = recipe_dict_full['mForm']
 
-        if recipe_form == 'RF_SOLID':
-            recipe_machine = ['Build_MinerMk1_C', 'Build_MinerMk2_C', 'Build_MinerMk3_C']
-        elif recipe_form == 'RF_LIQUID':
-            if recipe_output == 'Desc_LiquidOil_C':
-                recipe_machine = ['Build_OilPump_C', 'Build_FrackingExtractor_C']
-            elif recipe_output == 'Desc_Water_C':
-                recipe_machine = ['Build_WaterPump_C', 'Build_FrackingExtractor_C']
-        elif recipe_form == 'RF_GAS':
-            if recipe_output == 'Desc_NitrogenGas_C':
-                recipe_machine = ['Build_GasPump_C', 'Build_FrackingExtractor_C']
+        # if recipe_form == 'RF_SOLID':
+        #     recipe_machine = ['Build_MinerMk1_C', 'Build_MinerMk2_C', 'Build_MinerMk3_C']
+        # elif recipe_form == 'RF_LIQUID':
+        #     if recipe_output == 'Desc_LiquidOil_C':
+        #         recipe_machine = ['Build_OilPump_C', 'Build_FrackingExtractor_C']
+        #     elif recipe_output == 'Desc_Water_C':
+        #         recipe_machine = ['Build_WaterPump_C', 'Build_FrackingExtractor_C']
+        # elif recipe_form == 'RF_GAS':
+        #     if recipe_output == 'Desc_NitrogenGas_C':
+        #         recipe_machine = ['Build_GasPump_C', 'Build_FrackingExtractor_C']
         
 
 
