@@ -64,6 +64,7 @@ def parse_recipe(recipes_raw: list, machines_dict: dict, items_dict: dict, recip
 
             recipe_output_tuple = tuple(recipe_output_items_list)
             recipe_input_tuple = tuple(recipe_input_items_list)
+            recipe_active = not (hard_drive_recipe or machine.get_class_name() == 'Build_Converter_C' or 'Unpackage' in recipe_name)
 
             recipe = recipes.recipe(recipe_name, 
             recipe_output_tuple, 
@@ -71,20 +72,19 @@ def parse_recipe(recipes_raw: list, machines_dict: dict, items_dict: dict, recip
             amount_per_minute_per_machine_main, 
             machine, 
             hard_drive_recipe, 
-            not (hard_drive_recipe or machine.get_class_name() == 'Build_Converter_C'))
+            recipe_active)
 
             recipes_dict[recipe_name] = recipe
             for output_tuple in recipe_output_tuple:
                 resource_class_name = output_tuple[0].get_class_name()
                 resource_recipe = recipe
+                if resource_class_name == 'Desc_Water_C' and len(recipe_output_tuple) > 0:
+                    continue #skip water byproduct as a quickfix
                 try:
                     item_recipe_lookup_dict[resource_class_name]
                 except KeyError:
                     item_recipe_lookup_dict[resource_class_name] = []
-                item_recipe_lookup_dict[resource_class_name].append(resource_recipe)
-            
-            
-            
+                item_recipe_lookup_dict[resource_class_name].append(resource_recipe)           
 
 def create_resource_recipes(machine: machines.machine, allowed_resources: list, recipes_dict: dict, form: str, resources: dict, items_per_minute: float, item_recipe_lookup_dict : dict):
     if len(allowed_resources) == 0:
@@ -99,7 +99,9 @@ def create_resource_recipes(machine: machines.machine, allowed_resources: list, 
         recipe_single_machine_output = items_per_minute
         recipe_machine = machine
         recipe_hard_drive_recipe = False
-        recipe_active = True
+        recipe_active = False
+        if resource.get_name() == 'Water':
+            recipe_active = True # Water is nearly infinite
 
         resource_recipe = recipes.recipe(recipe_name, 
         recipe_output, 
@@ -281,10 +283,19 @@ if __name__ == "__main__":
     items_input = dict()
 
     # User inputs
-    requested_outputs = [('Reinforced Iron Plate', 60)]
-    available_inputs = [('Iron Ore', 1500)]
+    requested_outputs = [('SAM Fluctuator', 11.25),('Motor',20), ('Automated Wiring', 10), ('Smart Plating', 100), ('Versatile Framework', 100), ('AI Limiter',20)]
+    available_inputs = [('Iron Ore', 3690), ('Copper Ore', 1110), ('Caterium Ore', 540), ('Reanimated SAM', 67.5), ('Steel Beam', 960), ('Water', 20000000)]
+    # requested_outputs = [('SAM Fluctuator', 11.25)]
+    # Active_alternates = ['Alternate: Iron Pipe']
+    Active_alternates = ['Alternate: Fused Quickwire', 'Alternate: Iron Wire', 'Alternate: Fused Wire','Alternate: Caterium Wire','Alternate: Steamed Copper Sheet','Alternate: Iron Pipe','Alternate: Molded Steel Pipe', 'Alternate: Cast Screw', 'Alternate: Steel Screw', 'Alternate: Bolted Iron Plate', 'Alternate: Stitched Iron Plate', 'Alternate: Copper Rotor', 'Alternate: Steel Rotor', 'Alternate: Quickwire Stator', 'Alternate: Bolted Frame', 'Alternate: Steeled Frame']
     goal = 'points'
     # goal = 'power'
+    
+    # Set active alternates
+    for recipe_name in Active_alternates:
+        recipe = recipes_dict[recipe_name]
+        if not recipe.get_active():
+            recipe.toggle_active()
 
     # Get/Set the requested outputs
     requested_outputs_class_names = [item_display_name_lookup_dict[output[0]].get_class_name() for output in requested_outputs]
@@ -312,7 +323,7 @@ if __name__ == "__main__":
     optimizer.create_opti_parameters(opti, opti_variables, opti_parameters, recipes_dict)
     optimizer.add_balance_constraints(opti, opti_variables, opti_parameters, recipes_dict, items_output, items_input)
 
-    sink_points = optimizer.get_sink_points(items_output, items_input, items_dict) # Iets mis met sink points
+    sink_points = optimizer.get_sink_points(items_output, items_input, items_dict, available_inputs, item_display_name_lookup_dict) # Iets mis met sink points
     power_consumption = optimizer.get_power_consumption(opti_variables, recipes_dict)
 
     # Adust parameters
@@ -322,7 +333,10 @@ if __name__ == "__main__":
     
     for item, amount in available_inputs:
         item_class_name = item_display_name_lookup_dict[item].get_class_name()
-        opti.set_value(opti_parameters[item_class_name], -amount)
+        try:
+            opti.set_value(opti_parameters[item_class_name], -amount)
+        except KeyError:
+            pass # input is not used in any recipe
     
     # Set goal
     if goal == 'points':
@@ -339,7 +353,7 @@ if __name__ == "__main__":
         print('Sink points:', round(solution.value(sink_points),2))
     elif goal == 'power':
         print('Power consumption:', round(solution.value(power_consumption),2))
-    optimizer.print_soltuion(opti_variables, solution)
+    optimizer.print_soltuion(opti_variables, solution, items_output, items_input, items_dict)
     
     
     
